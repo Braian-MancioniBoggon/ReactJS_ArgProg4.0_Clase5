@@ -11,11 +11,13 @@ const ContadorResponsive = () => {
     let sumar = () => {
             setContador(contador + 1)
     }
+
     let restar = () => {
         if(contador > 0){
             setContador(contador - 1)
         }
     }
+
     let reset = () => {
         setContador(0)
         setEjeX("y")
@@ -34,7 +36,6 @@ const ContadorResponsive = () => {
             restar();
         }
     }
-
 
     const xInput = [-100, 0, 100]
     const color = useTransform(x, xInput, [
