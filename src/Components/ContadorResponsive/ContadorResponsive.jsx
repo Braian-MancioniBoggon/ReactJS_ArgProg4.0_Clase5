@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import { Box, Button, Flex, Heading, VStack } from '@chakra-ui/react'
-import { motion, useMotionValue, useTransform, useMotionValueEvent } from "framer-motion"
+import { motion, useMotionValue, useTransform } from "framer-motion"
 
 const ContadorResponsive = () => {
     const [contador, setContador] = useState(0)
@@ -43,14 +43,14 @@ const ContadorResponsive = () => {
       "rgb(68, 0, 255)",
       "rgb(3, 209, 0)"
     ])
-    const simboloMenos = useTransform(x, [-50, -100], [0, 1])
-    const simboloMasVertical =  useTransform(x, [10, 100], [0, 1])
-    const simboloMasHorizontal = useTransform(x, [50, 150], [0, 1])
+    const simboloMenos = useTransform(x, [-1, -10], [0, 1])
+    const simboloMasVertical =  useTransform(x, [1, 10], [0, 1])
+    const simboloMasHorizontal = useTransform(x, [1, 10], [0, 1])
 
     return(
         <VStack w="100%" pt="60px" justifyContent="center">
             <Flex>
-                <Heading as='h1' size='4xl' mb="15px">
+                <Heading as='h1' size='4xl' mb="15px" textAlign="center">
                     {contador}
                 </Heading>
             </Flex>
@@ -65,9 +65,9 @@ const ContadorResponsive = () => {
                     <Button onClick={sumar}>Sumar</Button>
                 </motion.div>
             </Flex>
-            <Flex alignItems="center" alignContent="center" justifyContent="center" width="100%" height="300"  display={{base:"flex", md:"none"}}>
+            <Flex alignItems="center" alignContent="center" justifyContent="center" width="100%" height="300" display={{base:"flex", md:"none"}}>
                 <Box width="100px">
-                    <motion.div ref={referenciaPadre}>
+                    <motion.div ref={referenciaPadre} w="100%" h="100%">
                         <motion.div
                             style={{ x }}
                             drag
@@ -76,8 +76,16 @@ const ContadorResponsive = () => {
                             dragConstraints={referenciaPadre}
                             onDragStart={obtenerInicioDrag}
                             onDragEnd={obtenerFinalDrag}
+                            width="150px"
+                            height="150px"
+                            position="absolute"
+                            top="calc(50% - 150px / 2)"
+                            left="calc(50% - 150px / 2)"
+                            display="flex"
+                            justifyContent="center"
+                            alignItems="center"
                         >
-                            <svg className="iconosTactiles" viewBox="0 0 50 50">
+                            <svg className="iconosTactiles" viewBox="0 0 50 50" w="85%" h="85%">
                                 <motion.path
                                     fill="none"
                                     strokeWidth="2"
