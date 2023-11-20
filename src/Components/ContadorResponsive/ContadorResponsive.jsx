@@ -47,13 +47,13 @@ const ContadorResponsive = () => {
     const simboloMasHorizontal = useTransform(x, [50, 150], [0, 1])
 
     return(
-        <VStack>
+        <VStack w="100%" pt="60px" justifyContent="center">
             <Flex>
-                <Heading as='h1' size='4xl'>
+                <Heading as='h1' size='4xl' mb="15px">
                     {contador}
                 </Heading>
             </Flex>
-            <Flex width="50%" justifyContent="space-evenly">
+            <Flex width="50%" justifyContent="space-evenly"  display={{base:"none", md:"flex"}}>
                 <motion.div whileHover={contador==0 ? { scale: 1 } : { scale: 1.2 }} whileTap={contador==0 ? { scale: 1 } : { scale: 0.8 }}>
                     <Button onClick={restar}isDisabled={contador==0 ? true : false}>Restar</Button>
                 </motion.div>
@@ -64,7 +64,7 @@ const ContadorResponsive = () => {
                     <Button onClick={sumar}>Sumar</Button>
                 </motion.div>
             </Flex>
-            <Flex alignItems="center" alignContent="center" justifyContent="center" width="100%" height="300">
+            <Flex alignItems="center" alignContent="center" justifyContent="center" width="100%" height="300"  display={{base:"flex", md:"none"}}>
                 <Box width="100px">
                     <motion.div ref={referenciaPadre}>
                         <motion.div
