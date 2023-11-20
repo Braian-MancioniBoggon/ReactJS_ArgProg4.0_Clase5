@@ -18,6 +18,7 @@ const ContadorResponsive = () => {
     }
     let reset = () => {
         setContador(0)
+        setEjeX("y")
     }
 
     const x = useMotionValue(0)
