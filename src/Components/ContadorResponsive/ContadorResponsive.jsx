@@ -48,9 +48,9 @@ const ContadorResponsive = () => {
     const simboloMasHorizontal = useTransform(x, [1, 10], [0, 1])
 
     return(
-        <VStack w="100%" pt="60px" justifyContent="center">
+        <VStack w="100%" pt="50px" justifyContent="center">
             <Flex>
-                <Heading as='h1' size='4xl' mb="15px" textAlign="center">
+                <Heading as='h1' size='4xl' mb="150px" textAlign="center">
                     {contador}
                 </Heading>
             </Flex>

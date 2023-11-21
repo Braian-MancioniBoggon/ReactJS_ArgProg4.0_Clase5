@@ -14,19 +14,21 @@ const Header = () => {
                         </Heading>
                     </Flex>
                     <Flex>
-                        <Popover placement='bottom-end' display={{base:"flex", md:"none"}}>
-                            <PopoverTrigger>
-                                <IconButton isRound='true' icon={<FaQuestion/>}  color="white" bg="#7B5BE7" _hover={{ bg:"#7B5BE7" }}></IconButton>
-                            </PopoverTrigger>
-                            <PopoverContent color={esOscuro ? "white" : "black"}>
-                                <PopoverHeader fontWeight='semibold'>¿Cómo funciona?</PopoverHeader>
-                                <PopoverArrow />
-                                <PopoverCloseButton />
-                                <PopoverBody>
-                                    Desplazá el botón a la derecha para sumar, a la izquierda para restar y hacia arriba o abajo para reiniciar el contador.
-                                </PopoverBody>
-                            </PopoverContent>
-                        </Popover>
+                        <Flex display={{base:"flex", md:"none"}}>
+                            <Popover placement='bottom-end'>
+                                <PopoverTrigger>
+                                    <IconButton isRound='true' icon={<FaQuestion/>}  color="white" bg="#7B5BE7" _hover={{ bg:"#7B5BE7" }}></IconButton>
+                                </PopoverTrigger>
+                                <PopoverContent color={esOscuro ? "white" : "black"}>
+                                    <PopoverHeader fontWeight='semibold'>¿Cómo funciona?</PopoverHeader>
+                                    <PopoverArrow />
+                                    <PopoverCloseButton />
+                                    <PopoverBody>
+                                        Desplazá el botón a la derecha para sumar, a la izquierda para restar y hacia arriba o abajo para reiniciar el contador.
+                                    </PopoverBody>
+                                </PopoverContent>
+                            </Popover>
+                        </Flex>
                         <IconButton  ml="4" isRound='true' icon={esOscuro ? <FaSun /> : <FaMoon />} onClick={toggleColorMode} color="white" bg="#7B5BE7" _hover={{ bg:"#7B5BE7" }}></IconButton>
                     </Flex>
                 </Flex>
